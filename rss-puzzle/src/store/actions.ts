@@ -1,5 +1,11 @@
-import { INIT_STATE, LOGOUT, SAVE_LOGIN } from './constans';
-import { InitStateActionType, LoginFormData, LogoutActionType, SaveLoginActionType } from './types';
+import { INIT_STATE, LOGOUT, SAVE_LOGIN, START_GAME } from './constans';
+import {
+  InitStateActionType,
+  LoginFormData,
+  LogoutActionType,
+  SaveLoginActionType,
+  StartGameActionType,
+} from './types';
 
 export const initStateAction = (): InitStateActionType => {
   const dataForm = localStorage.getItem('form');
@@ -28,4 +34,6 @@ export const logoutAction = (): LogoutActionType => {
   };
 };
 
-export type AllActions = InitStateActionType | SaveLoginActionType | LogoutActionType;
+export const startGameAction = (): StartGameActionType => ({ type: START_GAME });
+
+export type AllActions = InitStateActionType | SaveLoginActionType | LogoutActionType | StartGameActionType;

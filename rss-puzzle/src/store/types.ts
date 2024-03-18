@@ -1,4 +1,4 @@
-import { INIT_STATE, LOGOUT, SAVE_LOGIN } from './constans';
+import { INIT_STATE, LOGOUT, SAVE_LOGIN, START_GAME } from './constans';
 
 export interface LoginFormData {
   firstName: string;
@@ -8,6 +8,7 @@ export interface LoginFormData {
 export interface StateData {
   firstName: string;
   surname: string;
+  startGame: boolean;
 }
 
 export interface InitStateActionType {
@@ -22,6 +23,10 @@ export interface SaveLoginActionType {
 
 export interface LogoutActionType {
   readonly type: typeof LOGOUT;
+}
+
+export interface StartGameActionType {
+  readonly type: typeof START_GAME;
 }
 
 export type SubcribersType = () => void;

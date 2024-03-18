@@ -35,3 +35,34 @@
   text-align: center;
   color: #cad9e6;
 }
+
+.startBtn {
+  align-items: center;
+  width: 200px;
+  width: 200px;
+  margin-top: 50px;
+  padding: 16px 40px;
+  color: #413c5a;
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 0.7px;
+  background: #eacdf4;
+  border: transparent;
+  border-radius: 20px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.play {
+  display: inline-block;
+  margin-left: 8px;
+  width: 30px;
+  height: 30px;
+  background-image: url('../../assets/play.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.startBtn:hover {
+  background: #b9b0f0;
+}

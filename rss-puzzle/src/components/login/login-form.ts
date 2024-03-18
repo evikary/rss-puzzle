@@ -3,7 +3,7 @@ import store from '../../store/store';
 import './style.css';
 import { nameListener, surnameListener } from './validator-form';
 
-function formLogin() {
+function loginForm() {
   const form = document.createElement('form');
   form.classList.add('form');
   form.innerHTML = `
@@ -28,7 +28,5 @@ function formLogin() {
 
   return form;
 }
-
-const loginForm = formLogin();
 
 export default loginForm;

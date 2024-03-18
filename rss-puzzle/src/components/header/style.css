@@ -1,0 +1,38 @@
+.header {
+  margin-bottom: auto;
+}
+
+.navigation {
+  width: 1240px;
+  display: flex;
+  padding: 40px 60px;
+  font-family: sans-serif;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  margin-left: auto;
+  font-size: 30px;
+  letter-spacing: 0.6px;
+  background: transparent;
+  border-color: transparent;
+  color: aliceblue;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 30px;
+}
+
+.logout:hover {
+  color: #71a1cb;
+}
+
+.pic {
+  display: inline-block;
+  margin-left: 8px;
+  width: 30px;
+  height: 30px;
+  background-image: url('../../assets/logout.svg');
+  background-repeat: no-repeat;
+}

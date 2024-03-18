@@ -1,4 +1,4 @@
-import { INIT_STATE, SAVE_LOGIN } from './constans';
+import { INIT_STATE, LOGOUT, SAVE_LOGIN } from './constans';
 
 export interface LoginFormData {
   firstName: string;
@@ -18,6 +18,10 @@ export interface InitStateActionType {
 export interface SaveLoginActionType {
   readonly type: typeof SAVE_LOGIN;
   payload: LoginFormData;
+}
+
+export interface LogoutActionType {
+  readonly type: typeof LOGOUT;
 }
 
 export type SubcribersType = () => void;

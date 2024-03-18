@@ -1,5 +1,5 @@
-import { INIT_STATE, SAVE_LOGIN } from './constans';
-import { InitStateActionType, LoginFormData, SaveLoginActionType } from './types';
+import { INIT_STATE, LOGOUT, SAVE_LOGIN } from './constans';
+import { InitStateActionType, LoginFormData, LogoutActionType, SaveLoginActionType } from './types';
 
 export const initStateAction = (): InitStateActionType => {
   const dataForm = localStorage.getItem('form');
@@ -21,4 +21,11 @@ export const saveLoginAction = ({ firstName, surname }: LoginFormData): SaveLogi
   };
 };
 
-export type AllActions = InitStateActionType | SaveLoginActionType;
+export const logoutAction = (): LogoutActionType => {
+  localStorage.removeItem('form');
+  return {
+    type: LOGOUT,
+  };
+};
+
+export type AllActions = InitStateActionType | SaveLoginActionType | LogoutActionType;

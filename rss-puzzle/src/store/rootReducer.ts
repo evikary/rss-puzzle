@@ -1,4 +1,4 @@
-import { INIT_STATE, SAVE_LOGIN } from './constans';
+import { INIT_STATE, LOGOUT, SAVE_LOGIN } from './constans';
 import { AllActions } from './actions';
 import { StateData } from './types';
 
@@ -11,6 +11,10 @@ export type RootReducerType = (state: StateData | undefined, action: AllActions)
 
 export const rootReducer = (state = initialState, action: AllActions): StateData => {
   switch (action.type) {
+    case LOGOUT:
+      return {
+        ...initialState,
+      };
     case INIT_STATE:
       return {
         ...state,

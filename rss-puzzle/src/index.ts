@@ -1,17 +1,18 @@
 import './style.css';
 import loginForm from './components/login/login-form';
-import { nameListener, surnameListener } from './components/login/validator-form';
+import store from './store/store';
+import { initStateAction } from './store/actions';
 
-document.body.append(loginForm);
+store.subscribe(render);
 
-const inputs = document.querySelectorAll('.input');
+function render() {
+  const state = store.getState();
 
-inputs.forEach((item, index) => {
-  const input = item as HTMLInputElement;
-
-  if (index === 0) {
-    nameListener(input);
+  if (state.firstName === '') {
+    document.body.append(loginForm);
   } else {
-    surnameListener(input);
+    loginForm.remove();
   }
-});
+}
+
+store.dispatch(initStateAction());

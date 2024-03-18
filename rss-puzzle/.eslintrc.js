@@ -31,5 +31,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-explicit-any': 'error',
     'no-useless-escape': 'off',
+    '@typescript-eslint/no-use-before-define': 'off',
+    '@typescript-eslint/default-param-last': 'off',
   },
 };

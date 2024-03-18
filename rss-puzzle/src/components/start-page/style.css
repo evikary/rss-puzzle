@@ -22,8 +22,15 @@
   background-repeat: no-repeat;
 }
 
-.description {
+.greeting {
   margin-top: 40px;
+  font-size: 34px;
+  text-align: center;
+  color: #cad9e6;
+}
+
+.description {
+  margin-top: 10px;
   font-size: 34px;
   text-align: center;
   color: #cad9e6;

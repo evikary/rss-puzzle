@@ -1,9 +1,10 @@
 .box {
+  margin-bottom: auto;
+  padding-top: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 30px;
-  margin-bottom: auto;
   font-family: sans-serif;
 }
 

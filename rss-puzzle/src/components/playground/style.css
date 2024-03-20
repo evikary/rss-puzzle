@@ -1,5 +1,44 @@
+.main-container {
+  margin-bottom: auto;
+  width: 60%;
+  padding: 0 30px 100px 30px;
+}
 .play-box {
-  margin-top: -500px;
-  font-size: 50px;
-  color: aliceblue;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.board-pazzle {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 500px;
+  background: #fffbeb;
+}
+
+.rounds {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  min-height: 30px;
+  border-top: 1px solid #6b96c9;
+  border-bottom: 1px solid #6b96c9;
+}
+
+.source {
+  margin-top: 50px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  background: #83878a;
+  border: 2px solid #495b70;
+}
+
+.word {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #495b70;
 }

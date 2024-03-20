@@ -30,3 +30,33 @@ export interface StartGameActionType {
 }
 
 export type SubcribersType = () => void;
+
+/// Types collection levels
+
+export interface Level {
+  rounds: Rounds[];
+  roundsCount: number;
+}
+
+export interface Rounds {
+  levelData: LevelData;
+  words: WordsRound[];
+}
+
+export interface LevelData {
+  id: string;
+  name: string;
+  imageSrc: string;
+  cutSrc: string;
+  author: string;
+  year: string;
+}
+
+export interface WordsRound {
+  audioExample: string;
+  textExample: string;
+  textExampleTranslate: string;
+  id: number;
+  word: string;
+  wordTranslate: string;
+}

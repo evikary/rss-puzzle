@@ -28,5 +28,3 @@ function render() {
 }
 
 store.dispatch(initStateAction());
-
-alert('Пожалуйста, проверьте мою работу в последний день дедлайна! =)');

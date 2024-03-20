@@ -33,5 +33,6 @@ module.exports = {
     'no-useless-escape': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/default-param-last': 'off',
+    'no-plusplus': 'off',
   },
 };

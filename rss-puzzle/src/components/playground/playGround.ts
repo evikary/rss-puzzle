@@ -17,12 +17,19 @@ function playGame() {
     `;
 
   const board = container.querySelector('.board-pazzle') as HTMLDivElement;
-  const source = container.querySelector('.source');
+  const source = container.querySelector('.source') as HTMLDivElement;
+  const currentRound = container.querySelector('.round1') as HTMLDivElement;
 
   source?.addEventListener('click', (e: Event) => {
     const phrase = board.children[0];
     if (e.target) {
       phrase.append(e.target as HTMLElement);
+    }
+  });
+
+  currentRound?.addEventListener('click', (e: Event) => {
+    if (e.target) {
+      source.append(e.target as HTMLElement);
     }
   });
 

@@ -1,4 +1,4 @@
-import { INIT_STATE, LOGOUT, SAVE_LOGIN, START_GAME } from './constans';
+import { INCREMENT_ROW_INDEX, INIT_STATE, LOGOUT, SAVE_LOGIN, START_GAME } from './constans';
 
 export interface LoginFormData {
   firstName: string;
@@ -9,6 +9,8 @@ export interface StateData {
   firstName: string;
   surname: string;
   startGame: boolean;
+  rowIndex: number;
+  render: boolean;
 }
 
 export interface InitStateActionType {
@@ -27,6 +29,10 @@ export interface LogoutActionType {
 
 export interface StartGameActionType {
   readonly type: typeof START_GAME;
+}
+
+export interface IncrementRowIndexActionType {
+  readonly type: typeof INCREMENT_ROW_INDEX;
 }
 
 export type SubcribersType = () => void;

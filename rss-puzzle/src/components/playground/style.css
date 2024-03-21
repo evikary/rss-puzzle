@@ -46,3 +46,28 @@
   justify-content: center;
   border: 1px solid #495b70;
 }
+
+.btn-continue {
+  width: 160px;
+  margin-top: 50px;
+  padding: 16px 10px;
+  color: #efeef7;
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 0.7px;
+  background: #9780e3;
+  border: transparent;
+  border-radius: 20px;
+  transition: all 0.7s;
+  cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-continue:hover:not([disabled]) {
+  background: #5f46b1;
+  color: #fff;
+}

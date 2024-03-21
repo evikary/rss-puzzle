@@ -1,5 +1,6 @@
-import { INIT_STATE, LOGOUT, SAVE_LOGIN, START_GAME } from './constans';
+import { INCREMENT_ROW_INDEX, INIT_STATE, LOGOUT, SAVE_LOGIN, START_GAME } from './constans';
 import {
+  IncrementRowIndexActionType,
   InitStateActionType,
   LoginFormData,
   LogoutActionType,
@@ -34,6 +35,15 @@ export const logoutAction = (): LogoutActionType => {
   };
 };
 
+export const incrementRowIndexAction = (): IncrementRowIndexActionType => ({
+  type: INCREMENT_ROW_INDEX,
+});
+
 export const startGameAction = (): StartGameActionType => ({ type: START_GAME });
 
-export type AllActions = InitStateActionType | SaveLoginActionType | LogoutActionType | StartGameActionType;
+export type AllActions =
+  | InitStateActionType
+  | SaveLoginActionType
+  | LogoutActionType
+  | StartGameActionType
+  | IncrementRowIndexActionType;

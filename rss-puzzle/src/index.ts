@@ -14,13 +14,13 @@ function render() {
   if (state.firstName === '') {
     document.body.innerHTML = '';
     document.body.append(loginForm());
-  } else {
+  } else if (state.firstName !== '' && state.render) {
     document.body.innerHTML = '';
     document.body.append(headerGame);
     document.body.append(startScreen());
   }
 
-  if (state.startGame) {
+  if (state.startGame && state.render) {
     document.body.innerHTML = '';
     document.body.append(headerGame);
     document.body.append(playGame());

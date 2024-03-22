@@ -23,6 +23,7 @@
   flex-grow: 1;
   width: 100%;
   min-height: 30px;
+  font-family: sans-serif;
   border-top: 1px solid #6b96c9;
   border-bottom: 1px solid #6b96c9;
 }
@@ -47,7 +48,13 @@
   border: 1px solid #495b70;
 }
 
-.btn-continue {
+.box-btn {
+  display: flex;
+  column-gap: 16px;
+}
+
+.btn-continue,
+.btn-check {
   width: 160px;
   margin-top: 50px;
   padding: 16px 10px;
@@ -70,4 +77,17 @@
 .btn-continue:hover:not([disabled]) {
   background: #5f46b1;
   color: #fff;
+}
+
+.btn-check:hover:not([disabled]) {
+  background: #5f46b1;
+  color: #fff;
+}
+
+.error-word {
+  background: rgb(168, 77, 77);
+}
+
+.right-word {
+  background: rgb(107, 195, 107);
 }

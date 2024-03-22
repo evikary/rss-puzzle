@@ -20,6 +20,7 @@ let { rowIndex } = store.getState();
 let currentRound: HTMLDivElement;
 let source: HTMLDivElement;
 let continueBtn: HTMLButtonElement;
+let checkBtn: HTMLButtonElement;
 let container: HTMLElement;
 const sentences: WordsRound[] = level1.rounds[0].words;
 
@@ -29,7 +30,17 @@ function handleCurrentRound(e: Event) {
     return;
   }
 
+  [...currentRound.children].forEach((item) => {
+    item.classList.remove('error-word');
+    item.classList.remove('right-word');
+  });
+
   source.append(e.target as HTMLElement);
+
+  if (source.children.length !== 0) {
+    checkBtn.classList.add('disabled');
+    checkBtn.setAttribute('disabled', 'disabled');
+  }
 }
 
 function handleSource(e: Event) {
@@ -38,7 +49,15 @@ function handleSource(e: Event) {
   }
 
   currentRound.append(e.target as HTMLElement);
-  checkPhrase(currentRound.textContent);
+  if (source.children.length === 0) {
+    checkBtn.classList.remove('disabled');
+    checkBtn.removeAttribute('disabled');
+  }
+}
+
+function handleCheck() {
+  checkWords();
+  checkPhrase();
 }
 
 /// Creation next phrase
@@ -49,6 +68,8 @@ function nextPhrase() {
   source.innerHTML = createSource();
   continueBtn.setAttribute('disabled', 'disabled');
   continueBtn.classList.add('disabled');
+  checkBtn.classList.add('disabled');
+  checkBtn.setAttribute('disabled', 'disabled');
 }
 
 /// Creation source element
@@ -61,12 +82,26 @@ function createSource() {
 }
 
 /// Check phrase
-function checkPhrase(phrase: string | null) {
+function checkPhrase() {
+  const phrase = currentRound.textContent;
   const originalPhrase = sentences[rowIndex].textExample.split(' ').join('');
+
   if (phrase && phrase === originalPhrase) {
     continueBtn.classList.remove('disabled');
     continueBtn.removeAttribute('disabled');
   }
+}
+
+/// Check words
+function checkWords() {
+  const originalPhrase = sentences[rowIndex].textExample.split(' ');
+  [...currentRound.children].forEach((item, index) => {
+    if (item.textContent !== originalPhrase[index]) {
+      item.classList.add('error-word');
+    } else {
+      item.classList.add('right-word');
+    }
+  });
 }
 
 /// Component
@@ -77,7 +112,10 @@ function playGame() {
       <div class='play-box'>
         <div class='board-pazzle'>${sentences.map((item: WordsRound, index: number) => `<div class='rounds round${index + 1}'></div>`).join('')}</div>
         <div class='source'>${createSource()}</div>
+        <div class='box-btn'>
           <button disabled class='btn-continue disabled'>Continue</button>
+          <button disabled class='btn-check disabled'>Check</button>
+        </div> 
       </div>
     `;
 
@@ -85,9 +123,11 @@ function playGame() {
   source = container.querySelector('.source') as HTMLDivElement;
   continueBtn = container.querySelector('.btn-continue') as HTMLButtonElement;
   continueBtn.onclick = handleContinue;
+  checkBtn = container.querySelector('.btn-check') as HTMLButtonElement;
 
   source?.addEventListener('click', handleSource);
   currentRound?.addEventListener('click', handleCurrentRound);
+  checkBtn.addEventListener('click', handleCheck);
 
   function handleContinue() {
     store.dispatch(incrementRowIndexAction());
